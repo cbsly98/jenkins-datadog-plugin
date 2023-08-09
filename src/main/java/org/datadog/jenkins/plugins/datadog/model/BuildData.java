@@ -173,20 +173,10 @@ public class BuildData {
         Set<String> jobValues = new HashSet<>();
         jobValues.add(getJobName("unknown"));
         additionalTags.put("job", jobValues);
-        if (nodeName != null) {
-            Set<String> nodeValues = new HashSet<>();
-            nodeValues.add(getNodeName("unknown"));
-            additionalTags.put("node", nodeValues);
-        }
         if (result != null) {
             Set<String> resultValues = new HashSet<>();
             resultValues.add(getResult("UNKNOWN"));
             additionalTags.put("result", resultValues);
-        }
-        if (branch != null) {
-            Set<String> branchValues = new HashSet<>();
-            branchValues.add(getBranch("unknown"));
-            additionalTags.put("branch", branchValues);
         }
         mergedTags = TagsUtil.merge(mergedTags, additionalTags);
 
